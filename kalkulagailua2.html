@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Kalkulagailua</title>
+        
+    </head>
+	<script>
+		var kalkulatu = function(){
+            var z1 = parseInt(document.getElementById("zenb1").value);
+            var z2 = parseInt(document.getElementById("zenb2").value);
+            var erag = document.getElementById("eragiketa").value;
+			var em = parseInt(document.getElementById("emaitza").value);
+			var erantzuna;
+			var ondo = document.getElementById("ondo");
+			if (erag=='+') {erantzuna = z1+z2}
+			else if(erag=="-"){ erantzuna = z1-z2}
+			else if(erag=="*"){ erantzuna = z1*z2}
+			else if(erag=="/"){ erantzuna = z1/z2}
+
+			if(erantzuna == em){
+				ondo.innerHTML = "Ondo!";
+				ondo.style.color = "green";
+				}
+			else{
+				ondo.innerHTML = "Txarto...";
+				ondo.style.color = "red";
+				}
+        }
+        
+    </script>
+      
+	<style>
+	.kal {
+		background-color:SlateBlue;
+		color: white;
+		font-family:courier;
+	}
+	</style>
+	
+    <body>
+	<div class="kal">
+        <h1>KALKULAGAILUA</h1>
+
+        <label for="zenb1">Lehenengo zenbakia:</label>
+        <input type="text" id="zenb1" value="">
+        <br><br>
+        
+        <select id="eragiketa">
+               <option value="+">+</option> 
+               <option value="-">-</option> 
+               <option value="*">*</option>
+               <option value="/">/</option> 
+        </select>
+        <br><br>
+        
+        <label for="zenb2">Bigarren zenbakia:</label>
+        <input type="text" id="zenb2" value="">
+        <br><br>
+        
+        <label for="zenb1">Emaitza:</label>
+        <input type="text" id="emaitza" value="">
+        <br><br>
+        
+        <input type="button" value="Zuzendu" onClick='kalkulatu()'>
+		<br><br>
+		 </div>
+        <p id="ondo">.</p>
+        
+       
+    </body>
+</html>
